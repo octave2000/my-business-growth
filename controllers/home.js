@@ -1,8 +1,9 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const PocketBase = require('pocketbase/cjs');
+const process = require("process");
 
-const POCKER_URL =  (typeof process.env.POCKET_URL == "undefined"|| process.env.POCKET_URL == null) ? 'http://127.0.0.1:8090':process.env.POCKETBB_URL;
+const POCKER_URL =  "https://pocketbase-001.betterlevelgroup.com/api";
 const pb = new PocketBase(POCKER_URL);
 const router = express.Router();
 
