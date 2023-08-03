@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const PocketBase = require('pocketbase/cjs');
-const pb = new PocketBase('https://pocketbase-001.betterlevelgroup.com/api');
+const pb = new PocketBase('https://pocketbase-001.betterlevelgroup.com');
 const router = express.Router();
 
 
@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
-      const pocketBaseUrl = 'https://pocketbase-001.betterlevelgroup.com/api';
+      const pocketBaseUrl = 'https://pocketbase-001.betterlevelgroup.com';
       const collectionName = 'newsletter';
       const apiUrl = `${pocketBaseUrl}/api/collections/${collectionName}/records`;
     

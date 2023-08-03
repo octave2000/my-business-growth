@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const PocketBase = require('pocketbase/cjs');
 const process = require("process");
 
-const POCKER_URL =  "https://pocketbase-001.betterlevelgroup.com/api";
+const POCKER_URL =  "https://pocketbase-001.betterlevelgroup.com";
 const pb = new PocketBase(POCKER_URL);
 const router = express.Router();
 
