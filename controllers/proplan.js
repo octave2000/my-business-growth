@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const PocketBase = require('pocketbase/cjs');
-const pb = new PocketBase('http://127.0.0.1:8090');
+const pb = new PocketBase('https://pocketbase-001.betterlevelgroup.com/api');
 const router = express.Router();
 
 
@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
-      const pocketBaseUrl = 'http://127.0.0.1:8090';
+      const pocketBaseUrl = 'https://pocketbase-001.betterlevelgroup.com/api';
       const collectionName = 'pro_plan';
       const apiUrl = `${pocketBaseUrl}/api/collections/${collectionName}/records`;
     
