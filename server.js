@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-const server = app.listen(3000, function() {
+const server = app.listen(3000, function () {
   console.log('server started');
 });
 
@@ -40,10 +40,16 @@ const home = require('./controllers/home');
 app.set('view engine', 'ejs');
 
 app.use('/home', home);
+app.use('/', home);
 app.use('/form1', proplan);
 app.use('/form2', premiumplan);
 app.use('/contact', contact);
 app.use('/report', report);
 app.use('/form3', newsletter);
 
-
+app.get("/version", (req, res) => {
+  res.status(200).json({
+    "version": "1.0.0",
+    "ENV":process.env
+  });
+})

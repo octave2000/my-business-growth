@@ -1,7 +1,9 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const PocketBase = require('pocketbase/cjs');
-const pb = new PocketBase('http://127.0.0.1:8090');
+
+const POCKER_URL =  (typeof process.env.POCKER_URL =="undefined"|| process.env.POCKET_URL == null) ? 'http://127.0.0.1:8090':process.env.POCKER_URL;
+const pb = new PocketBase(POCKER_URL);
 const router = express.Router();
 
 
@@ -12,7 +14,7 @@ router.get("/", function (req, res) {
 
 router.post('/', async (req, res) => {
     try {
-      const pocketBaseUrl = 'http://127.0.0.1:8090';
+      const pocketBaseUrl = POCKER_URL;
       const collectionName = 'basic_plan';
       const apiUrl = `${pocketBaseUrl}/api/collections/${collectionName}/records`;
     
